@@ -1,3 +1,7 @@
+import java.util.Arrays;
+
+import java.util.Arrays;
+
 public class Test {
     public static void main(String[] args) {
 
@@ -133,6 +137,48 @@ public class Test {
         StringBuilder sb6 = new StringBuilder();
         sb6.append(s23);
         System.out.println(sb6.reverse().toString());
+
+        /*
+        数组遍历常用和lambda
+         */
+
+        Integer[] num1 = {1,2,3};
+        for(int a : num1 ){
+          System.out.println(a);
+        }
+
+        System.out.println("java8新增lambda表达式");
+       /*
+       lambda的语法
+       （1）无参数
+       ()->body
+       ()->"public";
+       (2)有1参数
+       (param)->{body;}
+       (System.out::println);
+       (String s)->System.out.println(s);
+       (3)多个参数
+       (param1,param2...)->{body}
+       (4)多参数不同数据类型
+       (type1 param1,type2 param2...)->{body}
+        */
+
+        Arrays.asList(num1).forEach(num->System.out.println(num));
+       /*
+       数组拷贝
+        */
+       Integer[] n1 = {1,2,3,4,5};
+       Integer[] n2 = {8,9,10,18};
+       Integer[] n3 =Arrays.copyOf(n2,3);
+       System.out.println(Arrays.toString(n3));
+       Integer[] n4 = Arrays.copyOfRange(n1,1,n1.length);
+       System.out.println(Arrays.toString(n4));
+
+       /*
+       数组填充
+        */
+
+
 
     }
 
