@@ -83,7 +83,9 @@ public class Test {
 
         System.out.println(sb1.length()); //11
         sb1.setLength(sb1.length()-1);
-        System.out.println(sb1.toString());
+        System.out.println(sb1.toString());//helloworld
+        sb1.setLength(sb1.length()+10);
+        System.out.println(sb1);//helloworld
 
         /**
          * jvm的智能优化
@@ -100,6 +102,17 @@ public class Test {
         sb.append("world");
 
         System.out.println(sb3.toString() == s18);//优化后不在同一个位置
+
+        /**
+         * 最快的
+         */
+        long time  = System.currentTimeMillis();
+        StringBuilder sb4 = new StringBuilder();
+        for(int i = 0 ; i < 100000 ; i++){
+            sb4.append(i);
+        }
+        System.out.println(System.currentTimeMillis()-time);
+
 
         
 
