@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Test {
     public static void main(String[] args) {
@@ -177,9 +178,53 @@ public class Test {
        /*
        数组填充
         */
+       int[] n = new int[10];
+       Arrays.fill(n,5);
+       System.out.println(Arrays.toString(n));
+
+       Arrays.fill(n,n.length-3,n.length,3);
+       System.out.println(Arrays.toString(n));
+
+       int[] n9 = new int[10];
+       for(int i = 0 ; i < n.length ; i++){
+           n9[i] = new Random().nextInt(10)+1;
+       }
+       System.out.println("排序前 " + Arrays.toString(n9));
+       Arrays.sort(n9);
+       System.out.println("排序后" + Arrays.toString(n9));
+
+       /*
+       练习：两个数求和leetcode
+       */
+       int[] nums = {2,7,11,15};
+       int target = 9;
+
+       System.out.println(Arrays.toString(sum(nums,target)));
+
+       /*
+       下列代码执行错误
+       int[] n = new int[3]{1,2,3}
+       System.out.println(n[1]);
+       原因是当大括号中赋值以后【】中不能赋值
+
+       int[] n =new int[3];
+       String[] s = new Stirng[3];
+       System.out.println(n[1]);//0
+       System.out.println(s[1]);//null
+        */
 
 
+    }
 
+    private static int[] sum(int[] nums, int target) {
+        for (int i = 0 ; i < nums.length ; i++){
+            for(int j = i+1 ; j < nums.length ; j++){
+                if((target - nums[i]) == nums[j]){
+                    return new int[]{i,j} ;
+                }
+            }
+        }
+        throw new IllegalArgumentException("No two sum solution");
     }
 
     private static String reverse(String s) {
