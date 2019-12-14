@@ -15,6 +15,7 @@ public class Test {
         //在java6之后引入intern（）方法去重复（字符串常量池和堆中）
         String s3 = s2.intern();
         System.out.println(s3);//hello
+        s.equals(s2);
 
         //假如不重复
         String s5 = "hel";
