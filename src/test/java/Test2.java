@@ -1,6 +1,8 @@
 import com.zeroten.common.util.CheckUtils;
 import org.junit.Test;
 
+import javax.sound.midi.Soundbank;
+
 public class Test2 {
     @Test
     public void sum(){
@@ -35,4 +37,16 @@ public class Test2 {
         }
     }
 
+    @Test
+    public void Test2(){
+        Integer n1 = 27387381;
+        Integer n2 = 27387382;
+
+        if(CheckUtils.equalsInt(n1,n2)){
+            System.out.println("same");
+        }else {
+            System.out.println("no same");
+        }
+
+    }
 }

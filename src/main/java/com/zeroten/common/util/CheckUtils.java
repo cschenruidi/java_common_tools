@@ -1,11 +1,15 @@
 package com.zeroten.common.util;
 
+import com.sun.org.apache.bcel.internal.generic.BREAKPOINT;
 import com.sun.org.apache.bcel.internal.generic.RETURN;
 import com.sun.org.apache.xpath.internal.functions.FuncFalse;
 import sun.font.TrueTypeFont;
 
 public class CheckUtils {
 
+    /*
+    查看String【】中是有空
+     */
     public static boolean isAnyEmpty(String...strings){
         boolean flag = true;
             if(strings == null) {
@@ -25,6 +29,10 @@ public class CheckUtils {
             return flag;
     }
 
+
+    /*
+    判断数组是否为空
+     */
     public static  boolean isEmpty(Object[] arr){
         boolean flag = true;
         if(arr == null) {
@@ -37,6 +45,9 @@ public class CheckUtils {
         return flag;
     }
 
+    /*
+    判断两个数值是否相等
+     */
     public  static boolean equals(String s1,String s2){
 
         boolean flag = true;
@@ -58,4 +69,21 @@ public class CheckUtils {
         return flag;
     }
 
+
+    /*
+    判断两个integer是否相等
+     */
+    public static boolean equalsInt(Integer n1,Integer n2){
+        if(n1 == n2)
+          return true;
+
+
+        if(n1 != null || n2 != null) {
+
+            if (n1.intValue() == n2.intValue()) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
